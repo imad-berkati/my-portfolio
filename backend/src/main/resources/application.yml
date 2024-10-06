@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: myportfolio
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5438}/${DB_NAME:myportfolio}?sslmode=disable&amp;currentSchema=${DB_SCHEMA:myportfolio}&amp;useSSL=true
+    username: ${DB_USER:myportfolio_us}
+    password: ${DB_PASSWORD:myportfolio_local_pwd}
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8585
