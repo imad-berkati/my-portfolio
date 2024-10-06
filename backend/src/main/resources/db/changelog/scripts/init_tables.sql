@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS myportfolio.user (
+    id SERIAL PRIMARY KEY,
+    login VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    last_login TIMESTAMP,
+    status VARCHAR(20) DEFAULT 'ACTIVE',
+    role VARCHAR(20) DEFAULT 'USER'
+);
