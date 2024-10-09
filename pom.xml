@@ -16,26 +16,10 @@
 	<description>My Portfolio project</description>
 	<modules>
 		<module>backend</module>
+		<module>open-api</module>
 	</modules>
 	<properties>
 		<java.version>23</java.version>
 	</properties>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
-					</excludes>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 
 </project>
