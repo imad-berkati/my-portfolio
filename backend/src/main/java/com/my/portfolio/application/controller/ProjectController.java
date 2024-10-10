@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1")
 public class ProjectController implements ProjectsApi {
 
-    private final ProjectService projectService;
+  private final ProjectService projectService;
 
-    public ProjectController(ProjectService projectService) {
-        this.projectService = projectService;
-    }
+  public ProjectController(ProjectService projectService) {
+    this.projectService = projectService;
+  }
 
-    @Override
-    public ResponseEntity<ProjectDto> getProjectById(Long id) {
-        return ResponseEntity.ok(projectService.getProjectById(id));
-    }
+  @Override
+  public ResponseEntity<ProjectDto> getProjectById(Long id) {
+    return ResponseEntity.ok(projectService.getProjectById(id));
+  }
 }

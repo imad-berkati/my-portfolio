@@ -4,5 +4,5 @@ import com.my.portfolio.api.v1.model.ProjectDto;
 
 public interface ProjectService {
 
-    ProjectDto getProjectById(long id);
+  ProjectDto getProjectById(long id);
 }
