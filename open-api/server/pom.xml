@@ -45,13 +45,6 @@
                                 <skipFormModel>false</skipFormModel>
                             </globalProperties>
                             <configOptions>
-                                <additionalModelTypeAnnotations>
-                                    @lombok.Data
-                                    @lombok.Builder
-                                    @lombok.AllArgsConstructor
-                                    @lombok.NoArgsConstructor
-                                    @lombok.Generated
-                                </additionalModelTypeAnnotations>
                                 <sourceFolder>src/gen/java</sourceFolder>
                                 <interfaceOnly>true</interfaceOnly>
                                 <dateLibrary>java8-localdatetime</dateLibrary>

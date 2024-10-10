@@ -17,6 +17,7 @@ paths:
           name: id
           schema:
             type: integer
+            format: int64
           required: true
           description: ID of the project to retrieve
       responses:
@@ -25,16 +26,17 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Project'
+                $ref: '#/components/schemas/ProjectDto'
         '404':
           description: Project not found
 
 components:
   schemas:
-    Project:
+    ProjectDto:
       type: object
       properties:
         id:
-          type: int
+          type: integer
+          format: int64
         name:
           type: string
