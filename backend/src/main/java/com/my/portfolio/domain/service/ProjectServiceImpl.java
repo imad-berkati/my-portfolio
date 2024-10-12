@@ -1,6 +1,7 @@
 package com.my.portfolio.domain.service;
 
 import com.my.portfolio.api.v1.model.ProjectDto;
+import com.my.portfolio.domain.exception.NotFoundException;
 import com.my.portfolio.domain.ports.application.ProjectService;
 import com.my.portfolio.domain.ports.infrastructure.ProjectRepository;
 import java.util.Optional;
@@ -19,8 +20,7 @@ public class ProjectServiceImpl implements ProjectService {
   public ProjectDto getProjectById(long id) {
     Optional<ProjectDto> projectDtoOptional = projectRepository.getProjectById(id);
     if (projectDtoOptional.isEmpty()) {
-      // TODO add custom exception and handle it in ControllerAdvice
-      throw new RuntimeException("NOT FOUND PROJECT");
+      throw new NotFoundException("Project " + id + " doesn't exist");
     }
     return projectDtoOptional.get();
   }
