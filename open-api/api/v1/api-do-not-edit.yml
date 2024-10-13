@@ -47,3 +47,9 @@ components:
           format: int64
         name:
           type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time

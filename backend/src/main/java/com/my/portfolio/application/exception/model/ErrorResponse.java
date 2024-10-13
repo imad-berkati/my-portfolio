@@ -1,6 +1,5 @@
 package com.my.portfolio.application.exception.model;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +9,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ErrorResponse {
 
   private final Instant timestamp;
