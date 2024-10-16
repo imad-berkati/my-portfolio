@@ -1,8 +1,6 @@
 package com.my.portfolio.infrastructure.adapters;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import com.my.portfolio.api.v1.model.ProjectDto;
 import com.my.portfolio.domain.ports.infrastructure.ProjectRepository;
@@ -34,10 +32,10 @@ class ProjectRepositoryImplTest extends PostgresTestContainer {
     Optional<ProjectDto> projectDtoOptional = projectRepository.getProjectById(1L);
     assertThat(projectDtoOptional).isNotEmpty();
     ProjectDto projectDto = projectDtoOptional.get();
-    assertEquals(projectDto.getId(), 1L);
-    assertEquals(projectDto.getName(), "test-project");
-    assertNotNull(projectDto.getCreatedAt());
-    assertNotNull(projectDto.getUpdatedAt());
+    assertThat(projectDto.getId()).isEqualTo(1L);
+    assertThat(projectDto.getName()).isEqualTo("test-project");
+    assertThat(projectDto.getCreatedAt()).isNotNull();
+    assertThat(projectDto.getUpdatedAt()).isNotNull();
   }
 
   @Test
