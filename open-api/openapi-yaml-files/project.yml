@@ -10,6 +10,8 @@ servers:
 paths:
   /projects/{id}:
     get:
+      tags:
+        - projects
       summary: Get project by ID
       operationId: getProjectById
       parameters:

@@ -3,10 +3,16 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "postinstall": "npm run download-openapi-generator",
+    "start": "npm run generate-api-client-v1 && npm run serve",
+    "serve": "ng serve --proxy-config proxy.conf.json --host 0.0.0.0 --disable-host-check --port 4201",
+    "build": "npm run generate-api-client-v1 && ng build --output-hashing none --configuration production && node scripts/build-component.js mecapa",
+    "download-openapi-generator": "rimraf openapi-generator.jar && curl --insecure https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/6.6.0/openapi-generator-cli-6.6.0.jar --output openapi-generator.jar",
+    "generate-api-client-v1": "java -jar openapi-generator.jar generate -i ../open-api/api/v1/api-do-not-edit.yml -g typescript-angular -o src/generated-api-client-v1 --additional-properties=serviceSuffix=OpenApiService,stringEnums=true,ngVersion=15.1.2 --global-property skipFormModel=false",
+    "test": "ng test --browsers ChromeHeadlessNoSandbox --watch=false",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "sonar": "sonar-scanner"
   },
   "private": true,
   "dependencies": {

@@ -33,3 +33,7 @@ build/
 .vscode/
 node_modules
 package-lock.json
+
+my-portfolio-frontend/src/generated-api-client-v1/**
+/my-portfolio-frontend/*.jar
+/my-portfolio-frontend/.angular/
