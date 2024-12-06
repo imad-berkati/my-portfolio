@@ -5,6 +5,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { routes } from './app.routes';
 import { Configuration } from '../generated-api-client-v1/configuration';
 import { ApiModule } from '../generated-api-client-v1/api.module';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }),
@@ -16,6 +17,6 @@ export const appConfig: ApplicationConfig = {
         basePath : 'http://localhost:8585/api/v1'
       }) // TODO : This configuration is only for localhost and development purposes. Replace this dynamic config from environments config files
     },
-    ApiModule,
+    ApiModule, provideAnimationsAsync(),
     ]
 };
