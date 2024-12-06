@@ -1,0 +1,38 @@
+ @media (min-width : 900px) {
+    #menu-icon {
+        display: none;
+    }
+    .mat-sidenav {
+        display: none;
+    }
+ }
+
+ @media (max-width : 900px) {
+    .top-menu-item {
+        display: none;
+    }
+ }
+
+ .mat-toolbar {
+    height: 60px;
+ }
+
+ .mat-sidenav {
+    border-radius: 0;
+    width: 160px;
+
+    .side-nav-items {
+        display: flexbox;
+        flex-direction: column;
+    
+        .side-menu-item {
+            margin-top: 20px;
+        }  
+     }
+
+ }
+
+
+
+
+

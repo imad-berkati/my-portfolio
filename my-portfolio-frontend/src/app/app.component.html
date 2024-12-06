@@ -1,2 +1,31 @@
-<mat-slide-toggle>Toggle me!</mat-slide-toggle>
-<app-projects></app-projects>
+<mat-toolbar>
+    <button mat-icon-button id="menu-icon" (click)="sidenav.toggle()" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <a mat-button class="top-menu-item">About me</a>
+    <a mat-button class="top-menu-item">Projects</a>
+    <a mat-button class="top-menu-item">Reviews</a>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav [fixedInViewport]="true" [fixedTopGap]="60" mode="over">
+        <div class="side-nav-items">
+            <div>
+                <a (click)="sidenav.close()" mat-button class="side-menu-item">About me</a>
+            </div>
+            <div>
+                <a (click)="sidenav.close()" mat-button class="side-menu-item">Projects</a>
+            </div>
+            <div>
+                <a (click)="sidenav.close()" mat-button class="side-menu-item">Reviews</a>
+            </div>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="main-content">
+            <app-about-me></app-about-me>
+            <app-projects></app-projects>
+            <app-reviews></app-reviews>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
