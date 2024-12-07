@@ -15,20 +15,49 @@
 
  .mat-toolbar {
     height: 60px;
+
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+
+    background-color: #2a2c39;
+
+    .mdc-button {
+        color: white;
+    }
+    .mdc-button:hover {
+        background-color: #ef6603;
+    }
+    
  }
 
- .mat-sidenav {
-    border-radius: 0;
-    width: 160px;
+ .mat-sidenav-container {
+    .mat-sidenav {
+        border-radius: 0;
+        width: 160px;
 
-    .side-nav-items {
-        display: flexbox;
-        flex-direction: column;
+        background-color: #2a2c39;
+
+        .mdc-button {
+            color: white;
+        }
+        .mdc-button:hover {
+            background-color: #ef6603;
+        }
     
-        .side-menu-item {
-            margin-top: 20px;
-        }  
+        .side-nav-items {
+            display: flexbox;
+            flex-direction: column;
+        
+            .side-menu-item {
+                margin-top: 20px;
+            }  
+         }
      }
+     
+    .mat-sidenav-content {
+        padding-top: 60px;
+    }
 
  }
 

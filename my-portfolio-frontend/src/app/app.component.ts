@@ -8,12 +8,13 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav'
 import { AboutMeComponent } from './pages/about-me/about-me.component';
 import { ReviewsComponent } from './pages/reviews/reviews.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet,
-      ProjectsComponent, AboutMeComponent, ReviewsComponent,
+     HomeComponent, ProjectsComponent, AboutMeComponent, ReviewsComponent,
       MatSlideToggleModule, MatToolbarModule, MatIconModule, MatButtonModule, MatSidenavModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

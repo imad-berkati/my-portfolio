@@ -2,30 +2,37 @@
     <button mat-icon-button id="menu-icon" (click)="sidenav.toggle()" aria-label="Example icon-button with menu icon">
       <mat-icon>menu</mat-icon>
     </button>
-    <a mat-button class="top-menu-item">About me</a>
-    <a mat-button class="top-menu-item">Projects</a>
-    <a mat-button class="top-menu-item">Reviews</a>
+    <a href="#home" mat-button class="top-menu-item">Home</a>
+    <a href="#aboutme" mat-button class="top-menu-item">About me</a>
+    <a href="#projects" mat-button class="top-menu-item">Projects</a>
+    <a href="#reviews" mat-button class="top-menu-item">Reviews</a>
 </mat-toolbar>
 
 <mat-sidenav-container>
     <mat-sidenav #sidenav [fixedInViewport]="true" [fixedTopGap]="60" mode="over">
         <div class="side-nav-items">
             <div>
-                <a (click)="sidenav.close()" mat-button class="side-menu-item">About me</a>
+                <a href="#home" (click)="sidenav.close()" mat-button class="side-menu-item">Home</a>
             </div>
             <div>
-                <a (click)="sidenav.close()" mat-button class="side-menu-item">Projects</a>
+                <a href="#aboutme" (click)="sidenav.close()" mat-button class="side-menu-item">About me</a>
             </div>
             <div>
-                <a (click)="sidenav.close()" mat-button class="side-menu-item">Reviews</a>
+                <a href="#projects" (click)="sidenav.close()" mat-button class="side-menu-item">Projects</a>
+            </div>
+            <div>
+                <a href="#reviews" (click)="sidenav.close()" mat-button class="side-menu-item">Reviews</a>
             </div>
         </div>
     </mat-sidenav>
+
+
     <mat-sidenav-content>
         <div class="main-content">
-            <app-about-me></app-about-me>
-            <app-projects></app-projects>
-            <app-reviews></app-reviews>
+            <app-home id="home"></app-home>
+            <app-about-me id="aboutme"></app-about-me>
+            <app-projects id="projects"></app-projects>
+            <app-reviews id="reviews"></app-reviews>
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
