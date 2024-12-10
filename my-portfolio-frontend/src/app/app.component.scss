@@ -13,22 +13,27 @@
     }
  }
 
- .mat-toolbar {
-    height: 60px;
-
+ header {
+    background-color: #2a2c39;
     position: fixed;
     top: 0;
-    z-index: 1000;
+    right: 0;
+    left: 0;
+    z-index: 2000;
 
-    background-color: #2a2c39;
+    .mat-toolbar {
+        height: 60px;
+        background-color: #2a2c39;
 
-    .mdc-button {
-        color: white;
-    }
-    .mdc-button:hover {
-        background-color: #ef6603;
-    }
-    
+        .mdc-button {
+            color: white;
+        }
+        .mdc-button:hover {
+            background-color: #ef6603;
+        }
+
+     }
+
  }
 
  .mat-sidenav-container {
@@ -44,17 +49,17 @@
         .mdc-button:hover {
             background-color: #ef6603;
         }
-    
+
         .side-nav-items {
             display: flexbox;
             flex-direction: column;
-        
+
             .side-menu-item {
                 margin-top: 20px;
-            }  
+            }
          }
      }
-     
+
     .mat-sidenav-content {
         padding-top: 60px;
     }
