@@ -2,7 +2,7 @@
     <div class="container-xl">
         <mat-toolbar [class.scrolled]="isScrolled">
             <button mat-icon-button id="menu-icon" (click)="sidenav.toggle()" aria-label="Example icon-button with menu icon">
-              <mat-icon>menu</mat-icon>
+              <mat-icon class="white-icon">menu</mat-icon>
             </button>
             <a href="#home" mat-button class="top-menu-item">Home</a>
             <a href="#aboutme" mat-button class="top-menu-item">About me</a>
@@ -15,7 +15,7 @@
 
 
 <mat-sidenav-container>
-    <mat-sidenav #sidenav [fixedInViewport]="true" [fixedTopGap]="60" mode="over">
+    <mat-sidenav [class.scrolled]="isScrolled" #sidenav [fixedInViewport]="true" [fixedTopGap]="60" mode="over">
         <div class="side-nav-items">
             <div>
                 <a href="#home" (click)="sidenav.close()" mat-button class="side-menu-item">Home</a>

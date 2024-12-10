@@ -43,6 +43,13 @@
             background-color: #ef6603;
         }
 
+        .white-icon {
+            color: white;
+        }
+        .white-icon svg {
+            fill: white;
+        }
+
      }
 
  }
@@ -53,6 +60,7 @@
         width: 160px;
 
         background-color: #2a2c39;
+        transition: background-color 0.3s ease;
 
         .mdc-button {
             color: white;
