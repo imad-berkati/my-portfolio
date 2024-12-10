@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -20,4 +20,11 @@ import { HomeComponent } from './pages/home/home.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  isScrolled = false;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll(): void {
+    const offset = window.scrollY || document.documentElement.scrollTop;
+    this.isScrolled = offset > 50;
+  }
 }

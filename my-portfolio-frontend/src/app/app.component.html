@@ -1,6 +1,6 @@
-<header>
+<header [class.scrolled]="isScrolled">
     <div class="container-xl">
-        <mat-toolbar>
+        <mat-toolbar [class.scrolled]="isScrolled">
             <button mat-icon-button id="menu-icon" (click)="sidenav.toggle()" aria-label="Example icon-button with menu icon">
               <mat-icon>menu</mat-icon>
             </button>

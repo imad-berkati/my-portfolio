@@ -13,6 +13,10 @@
     }
  }
 
+ .scrolled {
+    background-color : #444757 !important;
+ }
+
  header {
     background-color: #2a2c39;
     position: fixed;
@@ -20,10 +24,17 @@
     right: 0;
     left: 0;
     z-index: 2000;
+    padding : 10px 0;
+    transition: background-color 0.3s ease;
 
     .mat-toolbar {
         height: 60px;
         background-color: #2a2c39;
+        transition: background-color 0.3s ease;
+
+        .top-menu-item {
+            padding: 20px;
+        }
 
         .mdc-button {
             color: white;
