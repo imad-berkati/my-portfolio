@@ -1,5 +1,32 @@
-.slider {
+
+.home-main {
+  padding-top: 20px;
     background-color: #2a2c39;
+    color: white;
+
+    .home-text {
+      span {
+        color: #ef6603;;
+      }
+    }
+
+    .img-wrap {
+      position: relative;
+      padding: 30px;
+      text-align: center;
+      img {
+
+        border-radius: 999px;
+        width: 100%;
+        height: auto;
+      }
+    }
+}
+
+@media (max-width: 992px) {
+  .img-wrap img {
+    max-width: 250px;
+  }
 }
 
 
