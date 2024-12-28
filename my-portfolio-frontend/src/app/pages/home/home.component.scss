@@ -1,26 +1,93 @@
-
 .home-main {
   padding-top: 20px;
-    background-color: #2a2c39;
-    color: white;
+  background-color: #2a2c39;
+  color: white;
 
-    .home-text {
-      span {
-        color: #ef6603;;
-      }
+  .home-text {
+    span {
+      color: #ef6603;
+    }
+  }
+
+  .img-wrap {
+    position: relative;
+    padding: 30px;
+    text-align: center;
+
+    img {
+
+      border-radius: 999px;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .social-media {
+    ul {
+      display: flex;
+
     }
 
-    .img-wrap {
-      position: relative;
-      padding: 30px;
+    ul li {
+      list-style: none;
+    }
+
+    ul li a {
+      width: 50px;
+      height: 50px;
+      background-color: #fff;
       text-align: center;
-      img {
-
-        border-radius: 999px;
-        width: 100%;
-        height: auto;
-      }
+      line-height: 47px;
+      font-size: 20px;
+      margin: 0 10px;
+      display: block;
+      border-radius: 50%;
+      position: relative;
+      overflow: hidden;
+      border: 3px solid #fff;
+      z-index: 1;
     }
+
+    ul li a .icon {
+      position: relative;
+      color: #262626;
+      transition: .5s;
+      z-index: 3;
+    }
+
+    ul li a:hover .icon {
+      color: #fff;
+      transform: rotateY(360deg);
+    }
+
+    ul li a:before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #f00;
+      transition: .5s;
+      z-index: 2;
+    }
+
+    ul li a:hover:before {
+      top: 0;
+    }
+
+    ul li:nth-child(1) a:before {
+      background: #333333;
+    }
+
+    ul li:nth-child(2) a:before {
+      background: #0077b5;
+    }
+
+    ul li:nth-child(3) a:before {
+      background: #dd4b39;
+    }
+  }
 }
 
 @media (max-width: 992px) {
@@ -31,49 +98,57 @@
 
 
 .onde {
-    transform:rotate(180deg);
-    position:relative;
-    width: 100%;
-    height:15vh;
-    margin-bottom:-7px; /*Fix for safari gap*/
-    min-height:100px;
-    max-height:150px;
+  transform: rotate(180deg);
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  margin-bottom: -7px;
+  /*Fix for safari gap*/
+  min-height: 100px;
+  max-height: 150px;
+}
+
+
+/* Animation */
+
+.parallaxonde>use {
+  animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+
+.parallaxonde>use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+
+.parallaxonde>use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+
+.parallaxonde>use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+
+.parallaxonde>use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
   }
-  
-  
-  /* Animation */
-  
-  .parallaxonde > use {
-    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+
+  100% {
+    transform: translate3d(85px, 0, 0);
   }
-  .parallaxonde > use:nth-child(1) {
-    animation-delay: -2s;
-    animation-duration: 7s;
+}
+
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .onde {
+    height: 40px;
+    min-height: 40px;
   }
-  .parallaxonde > use:nth-child(2) {
-    animation-delay: -3s;
-    animation-duration: 10s;
-  }
-  .parallaxonde > use:nth-child(3) {
-    animation-delay: -4s;
-    animation-duration: 13s;
-  }
-  .parallaxonde > use:nth-child(4) {
-    animation-delay: -5s;
-    animation-duration: 20s;
-  }
-  @keyframes move-forever {
-    0% {
-     transform: translate3d(-90px,0,0);
-    }
-    100% { 
-      transform: translate3d(85px,0,0);
-    }
-  }
-  /*Shrinking for mobile*/
-  @media (max-width: 768px) {
-    .onde {
-      height:40px;
-      min-height:40px;
-    }
-  }
+}
