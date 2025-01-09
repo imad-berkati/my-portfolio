@@ -4,10 +4,10 @@
             <button mat-icon-button id="menu-icon" (click)="sidenav.toggle()" aria-label="Example icon-button with menu icon">
               <mat-icon class="white-icon">menu</mat-icon>
             </button>
-            <a href="#home" mat-button class="top-menu-item">Home</a>
-            <a href="#aboutme" mat-button class="top-menu-item">About me</a>
+            <a href="#about" mat-button class="top-menu-item">About</a>
             <a href="#projects" mat-button class="top-menu-item">Projects</a>
-            <a href="#reviews" mat-button class="top-menu-item">Reviews</a>
+            <a href="#skills" mat-button class="top-menu-item">Skills</a>
+            <a href="#testimonials" mat-button class="top-menu-item">Testimonials</a>
         </mat-toolbar>
     </div>
 </header>
@@ -18,16 +18,16 @@
     <mat-sidenav [class.scrolled]="isScrolled" #sidenav [fixedInViewport]="true" [fixedTopGap]="60" mode="over">
         <div class="side-nav-items">
             <div>
-                <a href="#home" (click)="sidenav.close()" mat-button class="side-menu-item">Home</a>
-            </div>
-            <div>
-                <a href="#aboutme" (click)="sidenav.close()" mat-button class="side-menu-item">About me</a>
+                <a href="#about" (click)="sidenav.close()" mat-button class="side-menu-item">About</a>
             </div>
             <div>
                 <a href="#projects" (click)="sidenav.close()" mat-button class="side-menu-item">Projects</a>
             </div>
             <div>
-                <a href="#reviews" (click)="sidenav.close()" mat-button class="side-menu-item">Reviews</a>
+                <a href="#skills" (click)="sidenav.close()" mat-button class="side-menu-item">Skills</a>
+            </div>
+            <div>
+                <a href="#testimonials" (click)="sidenav.close()" mat-button class="side-menu-item">Testimonials</a>
             </div>
         </div>
     </mat-sidenav>
@@ -35,10 +35,10 @@
 
     <mat-sidenav-content>
         <div class="main-content">
-            <app-home id="home"></app-home>
-            <app-about-me id="aboutme"></app-about-me>
+            <app-about id="about"></app-about>
             <app-projects id="projects"></app-projects>
-            <app-reviews id="reviews"></app-reviews>
+            <app-skills id="skills"></app-skills>
+            <app-testimonials id="testimonials"></app-testimonials>
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
