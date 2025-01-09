@@ -20,13 +20,13 @@
       width: 100%;
       height: auto;
     }
-  }
 
-  .social-media {
     ul {
       display: flex;
-
-    }
+      margin-top: revert;
+      justify-content: center;
+      padding: 0;
+        }
 
     ul li {
       list-style: none;
@@ -145,7 +145,6 @@
   }
 }
 
-/*Shrinking for mobile*/
 @media (max-width: 768px) {
   .onde {
     height: 40px;
