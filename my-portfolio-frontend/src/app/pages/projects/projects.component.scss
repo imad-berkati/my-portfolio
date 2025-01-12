@@ -46,6 +46,12 @@
       &:hover {
         transform: translateY(-.5%);
         box-shadow: 0 4rem 8rem rgba(0, 0, 0, .2);
+
+        .card__seemore {
+          color: blue;
+        }
+
+
       }
       &__img {
         display: block;
@@ -55,26 +61,50 @@
        }
       
       &__content {
-        display: grid;
-        grid-template-rows: auto 1fr auto;
-        grid-row-gap: 2rem;
+        display: content;
         padding: 2rem;
+        padding-top: 0;
         height: 100%;
+      }
+
+      &__badges {
+        .badge {
+          margin-right: 8px;
+          margin-bottom: 8px;
+          font-size: 1.1rem;
+          font-weight: normal;
+          background-color: white !important;
+          color: black !important;
+          border: solid 1px;
+          border-color: #404040 !important;
+        }
       }
       
       &__header {
-        font-size: 1.5rem;
+        font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+        //font-size: 1.5rem;
         font-weight: 500;
         color: $color-header;
       }
+
+      &__period {
+        font-weight: 400;
+        margin-bottom: 25px;
+        margin-top: -20px;
+      }
   
       &__text {
+        margin-top: 15px;
         
 /*         font-size: 1.5rem;
         letter-spacing: .1rem;
         line-height: 1.7;
         color: darken($color-text, 1%);
         margin-bottom: 2.5rem; */
+      }
+      &__seemore {
+        float: right;
+        color: gray;
       }
   
       &__btn {
