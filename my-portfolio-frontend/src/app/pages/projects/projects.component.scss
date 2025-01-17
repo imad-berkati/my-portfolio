@@ -26,6 +26,43 @@
   
   $transition: .2s;
 
+  .section-title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    h2 {
+      font-size: 14px;
+      font-weight: 500;
+      padding: 0;
+      line-height: 1px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: 
+  color-mix(in srgb, var(--default-color), transparent 50%);
+      position: relative;
+
+      &:after {
+        content: "";
+        width: 120px;
+        height: 1px;
+        display: inline-block;
+        background: #ef6603;
+        margin: 4px 10px;
+  }
+}
+
+
+  } 
+
+.section-title p {
+  color: var(--heading-color);
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: var(--heading-font);
+}
+
   
   // MAIN CONTENT
   .grid {
@@ -33,7 +70,6 @@
     .card {
       margin-bottom: 40px;
       padding: 0;
-      height: 510px;
       display: flex;
       flex-direction: column;
       background-color: #fff;
