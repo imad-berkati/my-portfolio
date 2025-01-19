@@ -8,3 +8,13 @@ databaseChangeLog:
             relativeToChangelogFile: true
       author: "I.B"
       id: "1"
+
+  - changeSet:
+      changes:
+        - sqlFile:
+            dbms: "postgresql"
+            encoding: "UTF-8"
+            path: "scripts/init_tables_v2.sql"
+            relativeToChangelogFile: true
+      author: "I.B"
+      id: "2"
