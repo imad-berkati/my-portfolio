@@ -20,11 +20,7 @@ public interface ProjectMapper {
 
   List<ProjectSummaryDto> toSummaryDtoList(List<Project> projects);
 
-  @Mapping(target = "skill.id", source = "skill.id")
-  @Mapping(target = "skill.name", source = "skill.name")
   ProjectSkillDto toProjectSkillDto(ProjectSkill projectSkill);
-
-  List<ProjectSkillDto> toProjectSkillDtoList(List<ProjectSkill> projectSkills);
 
   default List<ProjectSkillDto> getTopSkills(List<ProjectSkill> projectSkills) {
     return projectSkills.stream()
