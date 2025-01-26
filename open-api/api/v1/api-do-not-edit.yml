@@ -39,6 +39,23 @@ paths:
                 $ref: "#/components/schemas/ProjectDto"
         "404":
           description: Project not found
+  /projects/summary:
+    get:
+      tags:
+        - projects summaries
+      summary: Get projects summaries
+      operationId: getProjectsSummaries
+      responses:
+        "200":
+          description: List of projects summaries
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ProjectSummaryDto"
+        "404":
+          description: Project not found
 components:
   schemas:
     ProjectDto:
@@ -55,3 +72,49 @@ components:
         updatedAt:
           type: string
           format: date-time
+    SkillDto:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        version:
+          type: string
+        category:
+          type: string
+        active:
+          type: boolean
+    ProjectSkillDto:
+      type: object
+      properties:
+        skill:
+          $ref: "#/components/schemas/SkillDto"
+        skillPriority:
+          type: integer
+          format: int64
+        usagePercentage:
+          type: number
+    ProjectSummaryDto:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        title:
+          type: string
+        startDate:
+          type: string
+          format: date
+        endDate:
+          type: string
+          format: date
+        summary:
+          type: string
+        topSkills:
+          type: array
+          items:
+            $ref: "#/components/schemas/ProjectSkillDto"
