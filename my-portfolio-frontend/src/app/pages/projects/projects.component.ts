@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { OnInit } from '../../../../node_modules/@angular/core/index';
-import { ProjectDto } from '../../../generated-api-client-v1/index';
+import { ProjectDto, ProjectSummaryDto } from '../../../generated-api-client-v1/index';
 import { ProjectService } from '../../core/services/project.service';
-import {MatChipsModule} from '@angular/material/chips';
+import { MatChipsModule } from '@angular/material/chips';
+import { CommonModule, DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [MatChipsModule],
+  imports: [MatChipsModule, CommonModule],
+  providers: [DatePipe],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
@@ -15,14 +17,21 @@ export class ProjectsComponent implements OnInit {
 
   project: ProjectDto | null = null;
 
-  constructor(private projectService : ProjectService) {}
+  projectSummaries: ProjectSummaryDto[] = [];
+
+  constructor(private projectService: ProjectService, private datePipe: DatePipe) { }
 
   ngOnInit(): void {
     console.log('inside projects component');
-    this.loadProjectById(1);
+    this.getProjectsSummaries();
+    this.loadProjectById(2);
   }
 
-  private loadProjectById(id : number) {
+  formatDate(date: string | null): string {
+    return date ? this.datePipe.transform(date, 'MM/yyyy')! : 'present';
+  }
+
+  private loadProjectById(id: number) {
     this.projectService.getProjectById(id).subscribe({
       next: (data) => {
         this.project = data;
@@ -30,6 +39,17 @@ export class ProjectsComponent implements OnInit {
       },
       error: (err) => {
         console.error('Failed to load project:', err);
+      }
+    });
+  }
+
+  private getProjectsSummaries(): void {
+    this.projectService.getProjectsSummaries().subscribe({
+      next: (data) => {
+        this.projectSummaries = data;
+      },
+      error: (err) => {
+        console.error('Failed to load projects summaries:', err);
       }
     });
   }

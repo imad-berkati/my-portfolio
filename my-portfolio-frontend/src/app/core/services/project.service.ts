@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from '../../../../node_modules/rxjs/dist/types/index';
-import { ProjectDto, ProjectsOpenApiService } from '../../../generated-api-client-v1/index';
+import { ProjectDto, ProjectsOpenApiService, ProjectSummaryDto } from '../../../generated-api-client-v1/index';
 
 
 @Injectable({
@@ -12,6 +12,10 @@ export class ProjectService {
 
   public getProjectById(id : number) : Observable<ProjectDto> {
     return this.projectsOpenApiService.getProjectById(id);
+  }
+
+  public getProjectsSummaries() : Observable<Array<ProjectSummaryDto>> {
+    return this.projectsOpenApiService.getProjectsSummaries();
   }
 
 }
