@@ -31,7 +31,7 @@ public class ProjectRepositoryImpl implements ProjectRepository {
 
   @Override
   public List<ProjectSummaryDto> getProjectsSummaries() {
-    List<Project> projects = projectJpaRepository.findAll();
+    List<Project> projects = projectJpaRepository.findAllByOrderByStartDateDesc();
     return projectMapper.toSummaryDtoList(projects);
   }
 }

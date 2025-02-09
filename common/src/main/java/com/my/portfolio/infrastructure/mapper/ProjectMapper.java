@@ -16,6 +16,7 @@ public interface ProjectMapper {
   ProjectDto toDto(Project project);
 
   @Mapping(target = "topSkills", expression = "java(getTopSkills(project.getProjectSkills()))")
+  @Mapping(target = "logoUrl", source = "company.logoUrl")
   ProjectSummaryDto toSummaryDto(Project project);
 
   List<ProjectSummaryDto> toSummaryDtoList(List<Project> projects);
